@@ -13,7 +13,7 @@ public class Main {
                                 new Tree(31,new Tree(28),null),
                                 new Tree(40, new Tree(38), new Tree(52))));
 
-        System.out.println("Sum of tree elements = " + summWide(root));
+        soutWide(root);
     }
     static class Tree{
         int value;
@@ -31,16 +31,14 @@ public class Main {
         }
     }
 
-    public static int summWide(Tree root){
+    public static void soutWide(Tree root){
         Queue<Tree> tQ = new LinkedList<>();
         tQ.add(root);
-
-        int summa = 0;
 
         while(!tQ.isEmpty()){
             Tree node = tQ.remove();
 
-            summa+= node.value;
+            System.out.println(node.value);
 
             if (node.left != null){
                 tQ.add(node.left);
@@ -50,7 +48,5 @@ public class Main {
                 tQ.add(node.right);
             }
         }
-
-        return summa;
     }
 }
